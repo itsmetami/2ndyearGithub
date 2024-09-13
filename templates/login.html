@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/signin.css">
+    <link rel="icon" href="static/img_folder/favicon-32x32-removebg-preview.png">
+    <title>Log In</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <ul>
+                <li><a href="{{url_for('home')}}">Home</a></li>
+                <li><a href="{{url_for('aboutus')}}">About us</a></li>
+                <li><a href="{{url_for('contactus')}}">Contact</a></li>     
+                <li><a href="{{url_for('howtoadopt')}}">How to adopt</a></li>
+                <li><a href="{{url_for('adopt')}}">Adopt a pet</a></li>
+                <li><a href="{{url_for('donate')}}">Donate</a></li>
+                <li><a href="{{url_for('signin')}}">Register</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="container">
+                <div class="image-container">
+                    <img src="static/img_folder/pets.png" alt="pet image">
+                </div>
+                <div class="form-container">
+                    <form action="/login_process" method="post">
+                        <h3>Please log in</h3>
+                        
+                        <input type="text" placeholder="Username or Email" name="namefield" required><br>
+                        <input type="password" placeholder="Password" name="passfield" required><br>
+
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                            <ul class="flash-messages">
+                                {% for message in messages %}
+                                    {%  if message == "Logged out successfully" %}
+                                    <li class="flash-success">{{ message }} </li>
+                                    {% else %}
+                                    <li class="flash-error">{{ message }} </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        {% endwith %}
+
+                        <button type="submit">Log In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

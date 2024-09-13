@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/dashboard.css">
+    <link rel="icon" href="static/img_folder/favicon-32x32-removebg-preview.png">
+    
+    <title>Dashboard</title>
+</head>
+<body>
+    <ul>
+        <li><a href="{{url_for('home')}}">Home</a></li>
+        <li><a href="{{url_for('display')}}">View Profile</a></li>
+        <li><a href="{{url_for('aboutus')}}">About us</a></li>
+        <li><a href="{{url_for('contactus')}}">Contact</a></li>
+        <li><a href="{{url_for('howtoadopt')}}">How to adopt</a></li>
+        <li><a href="{{url_for('adopt')}}">Adopt a pet</a></li>
+        <li><a href="{{url_for('donate')}}">Donate</a></li>
+        <li><a href="{{url_for('logout')}}">Log out</a></li>
+    </ul>
+    
+    <h1>Manage Accounts</h1>
+    
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flash-messages">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Operation</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in user_account %}
+            <tr>
+                <form action="/update" method="POST">
+                    <td>
+                        <label>{{ i[1] }}</label>
+                        <input type="hidden" name="fullname" value="{{ i[1] }}">
+                        <input type="hidden" name="username" value="{{ i[2] }}">
+
+                        <input type="hidden" name="password" value="{{ i[3] }}">
+                        <input type="hidden" name="email" value="{{ i[4] }}">
+                        <input type="hidden" name="contact_no" value="{{ i[5] }}">
+                        <input type="hidden" name="address" value="{{ i[6] }}">
+                        <input type="hidden" name="occupation" value="{{ i[7] }}">
+                        <input type="hidden" name="civil_status" value="{{ i[8] }}">
+                        <input type="hidden" name="nationality" value="{{ i[9] }}">
+                        <input type="hidden" name="id" value="{{ i[0] }}">
+                    </td>
+                    <td>
+                        <button type="submit" name="action" value="updates">Edit profile</button>
+                        <button type="submit" name="action" value="deletes">Remove</button>
+                    </td>
+                </form>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

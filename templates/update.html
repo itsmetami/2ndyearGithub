@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/update.css">
+    <link rel="icon" href="static/img_folder/favicon-32x32-removebg-preview.png">
+    <title>Update Profile</title>
+</head>
+<body>
+    <form action="/update_process" method="post">
+
+        <div class="arrow">
+            <a href="/display">
+                <img src="static/img_folder/thin-arrow-left-icon.png">
+            </a>
+        </div>
+
+        <label for="id">ID</label>
+        <input type="text" id="id" name="id" value="{{new_Id}} {{id}}" readonly>
+        
+        <label for="new_fullname">Fullname</label>
+        <input type="text" id="new_fullname" name="new_fullname" value="{{namez}} {{fullname}}" placeholder="Enter new name">
+
+        <label for="new_username">Username</label>
+        <input type="text" id="new_username" name="new_username" value="{{username}} {{username}}" placeholder="Enter new username">
+        
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" value="{{emailz}} {{email}}" readonly>
+        
+        <label for="new_pass">Password</label>
+        <input type="text" id="new_pass" name="new_pass" value="{{new_password}}{{password}}">
+        
+        <label for="number">Contact Number</label>
+        <input type="text" id="number" name="number" value="{{number}}{{contact_no}}" readonly>
+        
+        <label for="new_address">Address</label>
+        <input type="text" id="new_address" name="new_address" value="{{address}}{{address}}" placeholder="Enter new address">
+        
+        <label for="new_occupation">Occupation</label>
+        <input type="text" id="new_occupation" name="new_occupation" value="{{occupation}} {{occupation}}" placeholder="Enter new occupation">
+        
+        <label for="new_status">Civil Status</label>
+        <input type="text" id="new_status" name="new_status" value="{{status}} {{civil_status}}" placeholder="Enter new civil status">
+        
+        <label for="new_nationality">Nationality</label>
+        <input type="text" id="new_nationality" name="new_nationality" value="{{nationality}} {{nationality}}" placeholder="Enter new nationality">
+        
+        <button type="submit">Save changes</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static/img_folder/f2826c7f-4357-4469-815c-deaeeabaf132-removebg-preview.png" type="image/png"/>
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="static/home.css">
+    <title>home</title>
+</head>
+<body>
+    <ul>
+        <li><a href="{{url_for('home')}}">Home</a></li>
+        <li><a href="{{url_for('display')}}">View Profile</a></li>
+        <li><a href="{{url_for('aboutus')}}">About us</a></li>
+        <li><a href="{{url_for('contactus')}}">Contact</a></li>
+        <li><a href="{{url_for('howtoadopt')}}">How to adopt</a></li>
+        <li><a href="{{url_for('adopt')}}">Adopt a pet</a></li>
+        <li><a href="{{url_for('donate')}}">Donate</a></li>
+        <li><a href="{{url_for('signin')}}">Register</a></li>
+        <li><a href="{{url_for('login')}}">Log in</a></li>
+
+    </ul>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flash-messages">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+        
+</body>
+</html>

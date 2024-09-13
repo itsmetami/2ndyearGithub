@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static/img_folder/favicon-32x32-removebg-preview.png">
+    <link rel="stylesheet" href="static/adopt.css">
+    <title>home</title>
+</head>
+<body>
+    <ul>
+        <li><a href="{{url_for('home')}}">Home</a></li>
+        <li><a href="{{url_for('display')}}">View Profile</a></li>
+        <li><a href="{{url_for('aboutus')}}">About us</a></li>
+        <li><a href="{{url_for('contactus')}}">Contact</a></li>
+        <li><a href="{{url_for('howtoadopt')}}">How to adopt</a></li>
+        <li><a href="{{url_for('adopt')}}">Adopt a pet</a></li>
+        <li><a href="{{url_for('donate')}}">Donate</a></li>
+
+    </ul>
+
+    <label for="adopt_a_pet">
+        What kind of pet are you looking for?
+    </label>
+    <input list="pets" name="adopt_a_pet" id="adopt_a_pet" placeholder="Name of pets">
+    
+    <datalist id="pets">
+        <option value="🐕Dog"></option>
+        <option value="Cat"></option>
+        <option value="Dinosaur"></option>
+        <option value="Dragon"></option>
+        <option value="Snake"></option>
+        <option value="Crocodile"></option>
+        <option value="Bird"></option>
+        <option value="Fly"></option>
+        <option value="Cockroach"></option>
+        <option value="Unicorn"></option>
+        <option value="Alien"></option>
+        
+    </datalist>
+
+    
+  
+</body>
+</html>

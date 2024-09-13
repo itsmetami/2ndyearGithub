@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/signin.css">
+    <link rel="icon" href="static/img_folder/favicon-32x32-removebg-preview.png">
+    
+    <title>Register</title>
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div class="sidebar">
+            <ul>
+                <li><a href="{{url_for('home')}}">Home</a></li>
+                <li><a href="{{url_for('aboutus')}}">About us</a></li>
+                <li><a href="{{url_for('contactus')}}">Contact</a></li>
+                <li><a href="{{url_for('howtoadopt')}}">How to adopt</a></li>
+                <li><a href="{{url_for('adopt')}}">Adopt a pet</a></li>
+                <li><a href="{{url_for('donate')}}">Donate</a></li>
+                <li><a href="{{url_for('signin')}}">Register</a></li>
+                <li><a href="{{url_for('login')}}">Log in</a></li>
+            </ul>
+        </div>
+        
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flash-messages">
+                    {% for message in messages %}
+                        {% if message in messages %}
+                            <li class="flash-error">{{ message }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        
+        <div class="main-content">
+            <div class="container">
+                <div class="image-container">
+                    <img src="static/img_folder/pets.png" alt="pet_image">
+                </div>
+                <div class="form-container">
+                    <form action="/signin_process" method="post">
+                        <h3>Registration Form</h3>
+                        <input type="text" placeholder="Fullname" name="fullname" required><br>
+                        <input type="text" placeholder="Username" name="username" required><br>
+                        <input type="password" placeholder="Password" name="password" required><br>
+                        <input type="email" placeholder="example@gmail.com" name="email" required><br>
+                        <input type="text" placeholder="Contact number" name="contact_no" required><br>
+                        <input type="text" placeholder="Address" name="address" required><br>
+                        <input type="text" placeholder="Occupation" name="occupation" required><br>
+                        <input type="text" placeholder="Civil status" name="civil_status" required><br>
+                        <input type="text" placeholder="Nationality" name="nationality" required><br>
+                        <a href="{{url_for('login')}}">Already have an account?</a><br>
+                        <button type="submit">Sign In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

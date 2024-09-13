@@ -1,0 +1,85 @@
+body, h2, form {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(to right, #ffdfae, #c2d4ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.arrow {
+    position: absolute;
+    padding: 5px;
+    border-radius: 50%;
+    margin: 0;
+    left: 35%;
+    top: 5%;
+    transition: background 0.3s;
+
+}
+.arrow:hover {
+    background-color: rgb(195, 195, 195);
+
+}
+
+label {
+    text-align: left;
+    display: block; 
+    margin-bottom: 2px; 
+    font-size: 13px; 
+    color: #333; 
+    margin-left: 15px;
+}
+form {
+    background: whitesmoke;
+    padding: 10px 50px;
+    margin: 100px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(103, 93, 3, 0.309);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 10px 10px;
+    margin-bottom: 8px;
+    border: none; 
+    border-bottom: 2px solid hsl(0, 0%, 57%); 
+    border-radius: 0; 
+    font-size: 16px;
+    background-color: transparent; 
+    outline: none; 
+}
+
+input[type="text"]:focus {
+    border-bottom: 2px solid #4fcbb7; 
+    outline: none; 
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #469387;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #4fcbb7;
+}
